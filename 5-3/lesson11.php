@@ -19,8 +19,12 @@ $users = [
 ];
 
 foreach ($users as $user) {
-    if ($user["name"] === "鈴木") {
-    echo $user["age"];
+    echo $user["name"] . $user["age"] . $user["gender"] . "\n";
 }
+
+foreach ($users as $user) {
+    if ($user["name"] === "鈴木") {
+        echo $user["age"] ;
+    }
 }
 
