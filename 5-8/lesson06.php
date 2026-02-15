@@ -13,22 +13,22 @@ echo "\n--- 実行開始 ---\n";
 
 switch ($mode) {
     case 'SELECT':
-        echo "【選択ソートを実行します】\n";
+        echo "【選択ソートを実行】\n";
         $result = selectionSort($arr);
         break;
     
     case 'INSERT':
-        echo "【挿入ソートを実行します】\n";
+        echo "【挿入ソートを実行】\n";
         $result = insertionSort($arr);
         break;
 
     case 'MERGE':
-        echo "【マージソートを実行します】\n";
+        echo "【マージソートを実行】\n";
         $result = mergeSort($arr);
         break;
 
     case 'QUICK':
-        echo "【クイックソートを実行します】\n";
+        echo "【クイックソートを実行】\n";
         $result = quickSort($arr);
         break;
         
