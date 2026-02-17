@@ -9,9 +9,8 @@ class Student {
         $this->studentId = $studentId;
     }
 
-    public function getName() {
-        return $this->name;
-    }
+    public function getName() {return $this->name;}
+    public function getStudentId() {return $this->studentId;}
 }
 
 class Course {
@@ -26,13 +25,8 @@ class Course {
         $this->students[] = $student;
     }
 
-    public function getStudents() {
-        $names = [];
-        foreach ($this->students as $student) {
-            $names[] = $student->getName();
-        }
-        return "コース名: {$this->name} | 生徒: " . implode(", ", $names);
-    }    
+    public function getName() {return $this->name;}
+    public function getStudents() {return $this->students;}    
 }
 
 class Grade {
@@ -40,14 +34,18 @@ class Grade {
     private $course;
     private $grade;
 
-    public function __construct($student, $course, $grade) {
+    public function __construct(Student $student, Course $course, $grade) {
     $this->student = $student;
     $this->course = $course;
     $this->grade = $grade;
     }
 
     public function getGrade() {
-        return "生徒: {$this->student->getName()} | 成績: {$this->grade}";
+        return [
+            'student' => $this->student->getName(),
+            'course' => $this->course->getName(),
+            'grade'=> $this-> grade,
+        ];
     }
 }
 
@@ -58,5 +56,8 @@ $course->addStudent ($student);
 
 $grade = new Grade($student, $course, "4");
 
-echo $course->getStudents() . "\n";
-echo $grade->getGrade() . "\n";
+$result = $grade->getGrade();
+echo "成績照会" . PHP_EOL;
+echo "学生名: " . $result['student'] . PHP_EOL;
+echo "科目名: " . $result['course'] . PHP_EOL;
+echo "評価 : " . $result['grade'] . PHP_EOL;
