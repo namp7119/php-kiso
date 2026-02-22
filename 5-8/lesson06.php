@@ -98,7 +98,7 @@ function merge($left, $right) {
 }
 
 
-function quickSort($arr) {
+function quickSort($arr) { 
     if (count($arr) < 2) return $arr;
     $pivot = $arr[0];
     $left = $right = [];

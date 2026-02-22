@@ -195,7 +195,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   </section>
 
   <h1 class="heading-3">
-    
+
      <strong>A poker hand→</strong> <?php echo htmlspecialchars($resultMessage); ?>
   </h1>
 </body>
